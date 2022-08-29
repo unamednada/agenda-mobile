@@ -26,7 +26,7 @@ export default function Register() {
         <TextInput placeholder="Área:" />
         <TextInput placeholder="Curso:" />
         <Button text="Cadastrar" />
-        <a href="/login">ou login</a>
+        <a href="/">ou login</a>
       </form>
     </div>
   );
