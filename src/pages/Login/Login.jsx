@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Button, TextInput } from '../../components';
 import Context from '../../context/Context';
 import Verify from '../../utils/Verify';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -10,11 +11,13 @@ export default function Login() {
     setLogEmail,
     setLogPassword
   } = useContext(Context);
+  const navigate = useNavigate();
 
   function login(e) {
     e.preventDefault();
     setLogEmail(email);
     setLogPassword(password);
+    navigate('/courses');
   }
 
   return (
