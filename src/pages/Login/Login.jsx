@@ -22,7 +22,7 @@ export default function Login() {
             password
           />
           <Button text="Entrar" onClick={() => {}} disabled />
-          <a href=".">registrar-se</a>
+          <a href="/register">registrar-se</a>
         </div>
       </form>
     </div>
