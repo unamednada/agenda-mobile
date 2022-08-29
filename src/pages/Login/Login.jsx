@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button, TextInput } from '../../components';
+import Context from '../../context/Context';
 import Verify from '../../utils/Verify';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const {
+    setLogEmail,
+    setLogPassword
+  } = useContext(Context);
+
+  function login(e) {
+    e.preventDefault();
+    setLogEmail(email);
+    setLogPassword(password);
+  }
 
   return (
     <div>
@@ -25,7 +36,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             password
           />
-          <Button text="Entrar" onClick={() => {}} disabled={ !(Verify.isEmail(email) && Verify.isPassword(password)) } />
+          <Button text="Entrar" onClick={(e) => login(e)} disabled={ !(Verify.isEmail(email) && Verify.isPassword(password)) } />
           <a href="/register">registrar-se</a>
         </div>
       </form>

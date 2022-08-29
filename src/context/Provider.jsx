@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import Context from './Context';
 
 export default function Provider({ children }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [logEmail, setLogEmail] = useState('');
+  const [logPassword, setLogPassword] = useState('');
 
   const context = {
-    email,
-    setEmail,
-    password,
-    setPassword,
+    logEmail,
+    setLogEmail,
+    logPassword,
+    setLogPassword,
   };
 
   return (
