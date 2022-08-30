@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 300;
+    color: white;
+}
+
+html {
+    background: radial-gradient(rgb(255, 230, 4), 1px, rgb(245, 173, 17));
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+h1 {
+    margin-top: 150px;
+    margin-bottom: 30px;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+input {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+input {
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+}

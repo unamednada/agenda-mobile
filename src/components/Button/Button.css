@@ -1,5 +1,22 @@
+button{
+display: flex;
+margin: 0 auto;
+}
+
 button {
-  padding: 0.5%;
-  background-color: white;
-  border-radius: 12px;
+  padding: 5px 20px;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  background: transparent;
+  font-size: 15px;
+  border: 1px solid white;
+  border-radius: 10px;
+  transition: .5s;
+  cursor: pointer;
+
+}
+
+button:hover{
+  background: white;
+  color: black;
 }
