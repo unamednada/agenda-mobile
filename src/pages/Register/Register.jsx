@@ -1,22 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button, TextInput } from '../../components';
+import Context from '../../context/Context';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
-  const [student, setStudent] = useState('');
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [cidade, setCidade] = useState('');
+  const [endereco, setEndereco] = useState('');
+  const [cep, setCep] = useState('');
+  const [polo, setPolo] = useState('');
+  const [modalidade, setModalidade] = useState('');
+  const [area, setArea] = useState('');
+  const [curso, setCurso] = useState('');
 
-  const studentObj = {
-    name: '',
-    email: '',
-    password: '',
-    cpf: '',
-    city: '',
-    address: '',
-    cep: '',
-    campus: '',
-    mode: '',
-    area: '',
-    course: '',
-  };
+  const { setStudentLog } = useContext(Context);
+
+  const navigate = useNavigate();
+
+  function register(e) {
+    e.preventDefault();
+    setStudentLog({
+      nome,
+      email,
+      password,
+      cpf,
+      cidade,
+      endereco,
+      cep,
+      polo,
+      modalidade,
+      area,
+      curso,
+    });
+    navigate('/courses');
+  }
 
   return (
     <div>
@@ -27,13 +47,13 @@ export default function Register() {
         <p>Preencher todos os campos abaixo:</p>
         <TextInput
           placeholder="Nome:"
-          value={studentObj.name}
-          onChange={(e) => setStudent({ ...studentObj, name: e.target.value })}
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
         />
         <TextInput
           placeholder="Email:"
-          value={studentObj.email}
-          onChange={(e) => setStudent({ ...studentObj, email: e.target.value })}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <TextInput
           placeholder="Confirmar email:"
@@ -41,8 +61,8 @@ export default function Register() {
         <p>senha:</p>
         <TextInput
           placeholder="senha:"
-          value={studentObj.password}
-          onChange={(e) => setStudent({ ...studentObj, password: e.target.value })}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           password
         />
         <TextInput
@@ -52,46 +72,46 @@ export default function Register() {
         <p>Seus dados:</p>
         <TextInput
           placeholder="CPF:"
-          value={studentObj.cpf}
-          onChange={(e) => setStudent({ ...studentObj, cpf: e.target.value })}
+          value={cpf}
+          onChange={(e) => setCpf(e.target.value)}
         />
         <TextInput
           placeholder="Cidade:"
-          value={studentObj.city}
-          onChange={(e) => setStudent({ ...studentObj, city: e.target.value })}
+          value={cidade}
+          onChange={(e) => setCidade(e.target.value)}
         />
         <TextInput
           placeholder="Endereço:"
-          value={studentObj.address}
-          onChange={(e) => setStudent({ ...studentObj, address: e.target.value })}
+          value={endereco}
+          onChange={(e) => setEndereco(e.target.value)}
         />
         <TextInput
           placeholder="CEP:"
-          value={studentObj.cep}
-          onChange={(e) => setStudent({ ...studentObj, cep: e.target.value })}
+          value={cep}
+          onChange={(e) => setCep(e.target.value)}
         />
         <p>Curso:</p>
         <TextInput
           placeholder="Unidade Polo:"
-          value={studentObj.campus}
-          onChange={(e) => setStudent({ ...studentObj, campus: e.target.value })}
+          value={polo}
+          onChange={(e) => setPolo(e.target.value)}
         />
         <TextInput
           placeholder="Modalidade:"
-          value={studentObj.mode}
-          onChange={(e) => setStudent({ ...studentObj, mode: e.target.value })}
+          value={modalidade}
+          onChange={(e) => setModalidade(e.target.value)}
         />
         <TextInput
           placeholder="Área:"
-          value={studentObj.area}
-          onChange={(e) => setStudent({ ...studentObj, area: e.target.value })}
+          value={area}
+          onChange={(e) => setArea(e.target.value)}
         />
         <TextInput
           placeholder="Curso:"
-          value={studentObj.course}
-          onChange={(e) => setStudent({ ...studentObj, course: e.target.value })}
+          value={curso}
+          onChange={(e) => setCurso(e.target.value)}
         />
-        <Button text="Cadastrar" />
+        <Button text="Cadastrar" onClick={(e) => register(e)} />
         <a href="/">ou login</a>
       </form>
     </div>
