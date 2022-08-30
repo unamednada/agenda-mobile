@@ -26,22 +26,20 @@ export default function Login() {
         <h1>Bem-vindo de volta!!</h1>
       </div>
       <form>
-        <div>
-          <p>Acesse sua conta agora mesmo</p>
-          <TextInput
-            placeholder="Email:"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <TextInput
-            placeholder="senha:"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            password
-          />
-          <Button text="Entrar" onClick={(e) => login(e)} disabled={ !(Verify.isEmail(email) && Verify.isPassword(password)) } />
-          <a href="/register">registrar-se</a>
-        </div>
+        <p>Acesse sua conta agora mesmo</p>
+        <TextInput
+          placeholder="Email:"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <TextInput
+          placeholder="senha:"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          password
+        />
+        <Button text="Entrar" onClick={(e) => login(e)} disabled={ !(Verify.isEmail(email) && Verify.isPassword(password)) } />
+        <a href="/register">registrar-se</a>
       </form>
     </div>
   )
