@@ -1,0 +1,9 @@
+input{
+    min-width: 20%;
+    padding: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    outline: none;
+    border: 1px solid white;
+}
