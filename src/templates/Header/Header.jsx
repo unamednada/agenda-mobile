@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Context from '../../context/Context';
 
 export default function Header() {
+  const { studentLog } = useContext(Context);
+  const { nome, email, cidade, modalidade, curso } = studentLog;
+
   return (
     <div>
       <div>
         <img src="logo.svg" alt="profile_pic" />
-        <h1>Aluno fulano de tal</h1>
-        <h3>Curso e coisa e tal</h3>
+        <h1>{nome}</h1>
+        <h3>{curso}l</h3>
       </div>
       <div>
-        <h2>Cidade, Estado</h2>
-        <h2>Semestre</h2>
-        <h2>e-mail</h2>
+        <h2>{cidade}</h2>
+        <h2>{modalidade}</h2>
+        <h2>{email}</h2>
       </div>
     </div>
   );
