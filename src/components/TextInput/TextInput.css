@@ -8,8 +8,6 @@
 }
 
 html {
-    max-width: 100vh;
-    max-height: 100vh;
     background: radial-gradient(rgb(255, 230, 4), 1px, rgb(245, 173, 17));
     background-attachment: fixed;
     background-size: cover;
@@ -31,7 +29,7 @@ input {
 }
 
 input {
-    width: 50%;
+    min-width: 25%;
     margin: 0 auto;
     margin-top: 15px;
     margin-bottom: 10px;
