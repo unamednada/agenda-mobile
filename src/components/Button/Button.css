@@ -10,10 +10,11 @@ button {
   border-radius: 10px;
   transition: .5s;
   cursor: pointer;
-
+  color: white;
 }
 
 button:hover {
   background: white;
+  border: 1px solid black;
   color: black;
 }
