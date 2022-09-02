@@ -38,7 +38,7 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
           password
         />
-        <Button text="Entrar" onClick={(e) => login(e)} disabled={ !(Verify.isEmail(email) && Verify.isPassword(password)) } />
+        <Button text="Entrar" onClick={(e) => login(e)} disabled={ !(Verify.isEmail(email) && Verify.isMininumLength(password, 8)) } />
         <a href="/register">registrar-se</a>
       </form>
     </div>
