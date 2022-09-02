@@ -11,5 +11,8 @@ export default class Verify {
     return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i.test(value);
   }
 
-  
+  static isMininumLength(value, length) {
+    return value.length >= length;
+  }
+    
 }
