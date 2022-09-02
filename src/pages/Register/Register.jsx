@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Button, TextInput } from '../../components';
 import Context from '../../context/Context';
+import './Register.css'
 import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
