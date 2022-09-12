@@ -1,6 +1,15 @@
 import React from 'react';
-export default function CheckBox(props) {
+export default function CheckBox({ onChange, options }) {
   return (
-    <input type="checkbox" {...props} />
+    <div>
+      {
+        options.map((option) => (
+          <label htmlFor={option.value}>
+            <input type="checkbox" id={option.value} name={option.value} value={option.value} onChange={onChange} />
+            {option.label}
+          </label>
+        ))
+      }
+    </div>
   );
 }
