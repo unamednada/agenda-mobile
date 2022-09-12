@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 export default function Agendas() {
   const dropDownOptions = [
     { value: 'agendas', label: 'Agendas' },
-    { value: 'cursos', label: 'Cursos' },
-    { value: 'eventos', label: 'Eventos' },
+    { value: 'courses', label: 'Cursos' },
+    { value: 'events', label: 'Eventos' },
   ];
 
   const checkBoxOptions = [
