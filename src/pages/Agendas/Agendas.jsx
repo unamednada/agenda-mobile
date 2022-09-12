@@ -39,7 +39,7 @@ export default function Agendas() {
         }}
       />
       <Button
-        text="Seguir"
+        text="Usar Esta Agenda"
         onClick={() => console.log('Seguir')}
       />
     </div>
