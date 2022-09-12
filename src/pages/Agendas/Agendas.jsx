@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../../components';
-import { Header, Agenda } from '../../templates'
+import { Header, Agenda } from '../../templates';
+import { useNavigate } from 'react-router-dom';
 
 export default function Agendas() {
   const dropDownOptions = [
+    { value: 'agendas', label: 'Agendas' },
     { value: 'cursos', label: 'Cursos' },
     { value: 'eventos', label: 'Eventos' },
-    { value: 'agendas', label: 'Agendas' },
   ];
 
   const checkBoxOptions = [
@@ -15,6 +16,10 @@ export default function Agendas() {
     { value: 'notion', label: 'Notion' },
   ];
 
+  const navigate = useNavigate();
+
+  const [page, setPage] = useState('agendas');
+
   return (
     <div>
       <Header />
@@ -22,8 +27,11 @@ export default function Agendas() {
         title="TIPOS DE AGENDAS"
         dropDownProps={{
           options: dropDownOptions,
-          onChange: (e) => console.log(e.target.value),
-          value: 'agendas',
+          onChange: (e) => {
+            setPage(e.target.value)
+            navigate(`/${e.target.value}`);
+          },
+          value: {page},
         }}
         checkBoxProps={{
           options: checkBoxOptions,
