@@ -3,37 +3,43 @@
     max-width: 95%;
     width: 1400px;
     margin: 0 auto;
+    background: rgba(253, 251, 251, 0.137);
 }
-
 .hero{
     position: relative;
+    background: rgb(0, 153, 255);
 }
-header .logo h1 img{
+
+
+header .logo h1 img {
+    display: block;
     width: 150px;
     height: 150px;
     border-radius: 100%;
-    display: block;
+    font-size: 32px;
+    font-weight: 300;
+    text-decoration: none;
+    color: white;
+   
 }
 
 .hero header{
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    
-    
-}
-
-nav ul{
-    list-style: none;
-    display: inline-block;
-    flex-wrap: wrap;
+    padding: 40px 0 30px;
 }
 
 nav ul li{
+    list-style: none;
+    display: block;
+    flex-wrap: wrap;
+}
+
+nav ul li a{
     text-decoration: none;
     margin-left: 15px;
-    font-size: 15px;
-    font-weight: 200;
+    font-size: 20px;
+    font-weight: 400;
     border-bottom: 2px solid transparent;
     color: white;
     
