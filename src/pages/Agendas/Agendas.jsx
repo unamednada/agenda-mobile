@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../../components';
 import { Header, Agenda } from '../../templates'
 
 export default function Agendas() {
@@ -28,6 +29,10 @@ export default function Agendas() {
           options: checkBoxOptions,
           onChange: (e) => console.log(e.target.value),
         }}
+      />
+      <Button
+        text="Seguir"
+        onClick={() => console.log('Seguir')}
       />
     </div>
   );
