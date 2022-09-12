@@ -11,7 +11,14 @@ p{
     font-weight: 400;
     color: white;
 }
-
+button{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  
+}
 a{
     text-decoration: none;
     color: white;
