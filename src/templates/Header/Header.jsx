@@ -10,7 +10,7 @@ export default function Header() {
       <div class="main">
         <header>
           <div class="logo">
-            <h1><a href="/"><img src="https://924234.smushcdn.com/2329743/wp-content/uploads/2022/05/netflix-distribui-nfts-da-serie-love-death-and-robots-saiba-como-ganhar.jpg?lossy=1&strip=1&webp=1" alt="perfil" /></a>{nome}</h1>
+            <a href="/"><img src="https://924234.smushcdn.com/2329743/wp-content/uploads/2022/05/netflix-distribui-nfts-da-serie-love-death-and-robots-saiba-como-ganhar.jpg?lossy=1&strip=1&webp=1" alt="perfil" />{nome}</a>
           </div>
          
           <nav>

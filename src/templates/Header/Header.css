@@ -10,8 +10,13 @@
     background: rgb(0, 153, 255);
 }
 
+header .logo a{
+    font-size: 25px;
+    font-family: 300;
+    color: white;
+}
 
-header .logo h1 img {
+header .logo  img {
     display: block;
     width: 150px;
     height: 150px;
@@ -25,6 +30,7 @@ header .logo h1 img {
 
 .hero header{
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 40px 0 30px;
 }
