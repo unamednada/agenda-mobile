@@ -17,7 +17,7 @@ export default function Login() {
     e.preventDefault();
     setLogEmail(email);
     setLogPassword(password);
-    navigate('/courses');
+    navigate('/agendas');
   }
 
   return (

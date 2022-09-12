@@ -1,11 +1,23 @@
 import React from 'react';
-import { Header} from '../';
+import { DropDown, CheckBox } from '../../components/';
 
-export default function Agenda() {
+export default function Agenda({ title, dropDownProps, checkBoxProps }) {
+  const {
+    options: dropDownOptions,
+    onChange: onDropDownChange,
+    value,
+  } = dropDownProps;
+
+  const {
+    options: checkBoxOptions,
+    onChange: onCheckBoxChange,
+  } = checkBoxProps;
+
   return (
     <div>
-      <Header />
-      <h1>Agenda</h1>
+      <h1>{ title }</h1>
+      <DropDown options={dropDownOptions} onChange={onDropDownChange} value={value} />
+      <CheckBox options={checkBoxOptions} onChange={onCheckBoxChange} />
     </div>
   );
 }

@@ -36,7 +36,7 @@ export default function Register() {
       area,
       curso,
     });
-    navigate('/courses');
+    navigate('/agendas');
   }
 
   return (
