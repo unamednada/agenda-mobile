@@ -1,0 +1,16 @@
+#item-list {
+    background: rgba(128, 128, 128, 0.247);
+    padding: 16px;
+    margin: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+#item-list h1{
+text-align: center;
+}

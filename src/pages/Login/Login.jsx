@@ -35,9 +35,9 @@ export default function Login() {
     } catch (err) {
       console.log(err)
     }
-
-
-
+    setLogEmail(email);
+    setLogPassword(password);
+    navigate('/agendas');
   }
 
   return (
