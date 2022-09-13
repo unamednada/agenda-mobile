@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from '../../components';
 import { Header, Agenda } from '../../templates';
 import { useNavigate } from 'react-router-dom';
+import Context from '../../context/Context';
 
 export default function Courses() {
   const dropDownOptions = [
@@ -19,6 +20,11 @@ export default function Courses() {
   const navigate = useNavigate();
 
   const [page, setPage] = useState('courses');
+  const {
+    setCourses,
+  } = useContext(Context);
+
+  const [selectedCourses, setSelectedCourses] = useState([]);
 
   return (
     <div>
@@ -35,12 +41,22 @@ export default function Courses() {
         }}
         checkBoxProps={{
           options: checkBoxOptions,
-          onChange: (e) => console.log(e.target.value),
+          onChange: (e) => {
+            const { value } = e.target;
+            if (selectedCourses.includes(value)) {
+              setSelectedCourses(selectedCourses.filter((agenda) => agenda !== value));
+            } else {
+              setSelectedCourses([...selectedCourses, value]);
+            }
+          },
         }}
       />
       <Button
         text="Seguir"
-        onClick={() => console.log('Seguir')}
+        onClick={() => {
+          window.alert('Você receberá os lembretes destes cursos!');
+          setCourses(selectedCourses);
+        }}
       />
     </div>
   );

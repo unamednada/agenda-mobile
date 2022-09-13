@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from '../../components';
 import { Header, Agenda } from '../../templates';
 import { useNavigate } from 'react-router-dom';
+import Context from '../../context/Context';
 
 export default function Events() {
   const dropDownOptions = [
@@ -19,6 +20,11 @@ export default function Events() {
   const navigate = useNavigate();
 
   const [page, setPage] = useState('events');
+  const {
+    setEvents,
+  } = useContext(Context);
+
+  const [selectedEvents, setSelectedEvents] = useState([]);
 
   return (
     <div>
@@ -35,12 +41,22 @@ export default function Events() {
         }}
         checkBoxProps={{
           options: checkBoxOptions,
-          onChange: (e) => console.log(e.target.value),
+          onChange: (e) => {
+            const { value } = e.target;
+            if (selectedEvents.includes(value)) {
+              setSelectedEvents(selectedEvents.filter((agenda) => agenda !== value));
+            } else {
+              setSelectedEvents([...selectedEvents, value]);
+            }
+          },
         }}
       />
       <Button
         text="Seguir"
-        onClick={() => console.log('Seguir')}
+        onClick={() => {
+          window.alert('Agendas selecionadas com sucesso!');
+          setEvents(selectedEvents);
+        }}
       />
     </div>
   );
