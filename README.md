@@ -1,4 +1,3 @@
-
 # IntegraSenac
 
 Agenda móvel que integra os avisos e prazos do Senac com seu aplicativo de calendário favorito!

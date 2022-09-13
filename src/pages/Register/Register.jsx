@@ -4,8 +4,11 @@ import Context from '../../context/Context';
 import './Register.css'
 import { useNavigate } from 'react-router-dom';
 
+import api from "../../services/api"
+
+
 export default function Register() {
-  const [nome, setNome] = useState('');
+  const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [cpf, setCpf] = useState('');
@@ -24,7 +27,7 @@ export default function Register() {
   function register(e) {
     e.preventDefault();
     setStudentLog({
-      nome,
+      username,
       email,
       password,
       cpf,
@@ -39,6 +42,36 @@ export default function Register() {
     navigate('/agendas');
   }
 
+  const handlerSubmit = async e => {
+    e.preventDefault();
+    if (!username || !password || !email) {
+      console.log("precisa colocar o minimo necessario")
+      return
+    }
+
+
+    try {
+      const response = await api.post("/users", {
+        username,
+        email,
+        password,
+        cpf,
+        cidade,
+        endereco,
+        cep,
+        polo,
+        modalidade,
+        area,
+        curso
+      })
+      console.log(response.data)
+
+      navigate('/courses');
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <div>
       <div>
@@ -48,8 +81,8 @@ export default function Register() {
         <p>Preencher todos os campos abaixo:</p>
         <TextInput
           placeholder="Nome:"
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}
+          value={username}
+          onChange={(e) => setUserName(e.target.value)}
         />
         <TextInput
           placeholder="Email:"
@@ -112,7 +145,7 @@ export default function Register() {
           value={curso}
           onChange={(e) => setCurso(e.target.value)}
         />
-        <Button text="Cadastrar" onClick={(e) => register(e)} />
+        <Button text="Cadastrar" onClick={(e) => handlerSubmit(e)} />
         <a href="/">ou login</a>
       </form>
     </div>
