@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from '../../components';
 import { Header, Agenda } from '../../templates';
 import { useNavigate } from 'react-router-dom';
+import Context from '../../context/Context';
 
 export default function Agendas() {
   const dropDownOptions = [
@@ -19,6 +20,11 @@ export default function Agendas() {
   const navigate = useNavigate();
 
   const [page, setPage] = useState('agendas');
+  const {
+    setAgendas,
+  } = useContext(Context);
+
+  const [selectedAgendas, setSelectedAgendas] = useState([]);
 
   return (
     <div>
@@ -35,12 +41,22 @@ export default function Agendas() {
         }}
         checkBoxProps={{
           options: checkBoxOptions,
-          onChange: (e) => console.log(e.target.value),
+          onChange: (e) => {
+            const { value } = e.target;
+            if (selectedAgendas.includes(value)) {
+              setSelectedAgendas(selectedAgendas.filter((agenda) => agenda !== value));
+            } else {
+              setSelectedAgendas([...selectedAgendas, value]);
+            }
+          },
         }}
       />
       <Button
-        text="Usar Esta Agenda"
-        onClick={() => console.log('Seguir')}
+        text="Usar Estas Agendas"
+        onClick={() => {
+          window.alert('Agendas selecionadas com sucesso!');
+          setAgendas(selectedAgendas);
+        }}
       />
     </div>
   );
